@@ -1,0 +1,6 @@
+@eSaludApi_HostAddress = http://localhost:5195
+
+GET {{eSaludApi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
