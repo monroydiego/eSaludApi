@@ -17,7 +17,8 @@ namespace eSaludApi.Domain.Common.Entities
         public Role(string nombreRol)
         {
             if (string.IsNullOrWhiteSpace(nombreRol))
-                throw new ArgumentNullException(nameof(nombreRol), "El nombre del rol es requerido");
+
+            throw new ArgumentNullException(nameof(nombreRol), "El nombre del rol es requerido");
 
             NombreRol = nombreRol;
         }
