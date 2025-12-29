@@ -27,18 +27,8 @@ namespace eSaludApi.Infrastructure.Persistance.Configurations
                 .HasMaxLength(55) // tendrá un tamaño de 55 char
                 .IsRequired(); // no nulo
 
-            // Los campos de BaseEntity también se pueden mapear específicamente
-            builder.Property(r => r.CreatedAt).HasColumnName("createdAt")
-                .IsRequired() // indicamos que es NOT NULL
-                .HasDefaultValueSql("GETUTCDATE()"); // valor por defecto de la fecha actual
-
-            builder.Property(r => r.UpdateAt).HasColumnName("updateAt")
-                .HasColumnName("updateAt")
-                .IsRequired(false);
-
-            builder.Property(r => r.IsActive).HasColumnName("isActive")
-                .IsRequired()
-                .HasDefaultValue(true);
+            // Los campos de BaseEntity se encargará el dbContext
+            
         }
     }
 }
