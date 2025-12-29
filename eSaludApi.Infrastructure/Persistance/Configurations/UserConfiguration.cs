@@ -18,17 +18,32 @@ namespace eSaludApi.Infrastructure.Persistance.Configurations
           
             builder.ToTable("usuarios"); // Asi se llamará en sql
 
-            builder.HasKey(u => u.Id);
-
+            builder.HasKey(u => u.Id); 
+             
             // Mapeamos 'Id' a 'idUsuario'
             builder.Property(u => u.Id)
                 .HasColumnName("idUsuario")
                 .UseIdentityColumn();
 
-            builder.Property(u => u.Nombre).HasMaxLength(100).IsRequired();
-            builder.Property(u => u.Apellidos).HasMaxLength(100).IsRequired();
-            builder.Property(u => u.Correo).HasMaxLength(150).IsRequired();
-            builder.Property(u => u.Contrasena).HasColumnName("contraseña").IsRequired();
+            builder.Property(u => u.Nombre)
+                .HasMaxLength(100)
+                .IsRequired();
+
+            builder.Property(u => u.Apellidos)
+                .HasMaxLength(100)
+                .IsRequired();
+
+            builder.Property(u => u.Correo)
+                .HasMaxLength(150)
+                .IsRequired();
+
+            builder.Property(u => u.Contrasena)
+                .HasColumnName("contraseña")
+                .IsRequired();
+
+            builder.Property(u => u.IdRol)
+                .HasColumnName("idRol") // Mapeo explícito a minúsculas
+                .IsRequired(); 
 
             // Configuración de la Llave Foránea
             builder.HasOne(u => u.Role)
