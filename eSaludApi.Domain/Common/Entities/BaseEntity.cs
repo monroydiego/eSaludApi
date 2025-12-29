@@ -11,7 +11,7 @@ namespace eSaludApi.Domain.Common.Entities
         public int Id { get; protected set; }
         public DateTime CreatedAt { get; protected set; } = DateTime.UtcNow;
         public DateTime? UpdateAt { get; protected set; }
-        public bool IsActive { get; set; } = true;
+        public bool IsActive { get; protected set; } = true;
 
     }
 }
